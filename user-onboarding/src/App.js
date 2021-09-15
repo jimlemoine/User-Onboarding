@@ -6,8 +6,6 @@ import schema from './formSchema';
 import axios from 'axios';
 import * as yup from 'yup';
 
-import './App.css';
-
 const initialFormValues = {
   name: '',
   email: '',
@@ -26,7 +24,7 @@ const initialUsers = [];
 const initialDisabled = true;
 
 function App() {
-  const [users, setUsers] = useState([initialUsers]);
+  const [users, setUsers] = useState(initialUsers);
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
