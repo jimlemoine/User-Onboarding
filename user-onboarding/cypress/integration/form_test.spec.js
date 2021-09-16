@@ -46,5 +46,52 @@ describe("User Form App", () => {
             .click()
     })
 
+    describe('Checking form validation if an input is left empty', () => {
+
+        it('check input validation', () => {
+            emailInput()
+                .type('someone@whatever.com');
+            passwordInput()
+                .type('arandompword');
+            termsInput()
+                .check();
+            submitButton()
+                .should('be.disabled')
+        })
+
+        it('check email validation', () => {
+            nameInput()
+                .type('Jim');
+            passwordInput()
+                .type('arandompword');
+            termsInput()
+                .check();
+            submitButton()
+                .should('be.disabled')
+        })
+
+        it('check password validation', () => {
+            nameInput()
+                .type('Jim');
+            emailInput()
+                .type('someone@whatever.com');
+            termsInput()
+                .check();
+            submitButton()
+                .should('be.disabled')
+        })
+
+        it('check terms checkbox validation', () => {
+            nameInput()
+                .type('Jim');
+            emailInput()
+                .type('someone@whatever.com');
+            passwordInput()
+                .type('arandompword');
+            submitButton()
+                .should('be.disabled')
+        })
+    })
+
 })
 //do not type here... DANGER ZONE
